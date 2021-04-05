@@ -18,6 +18,7 @@ public class KutuphaneOtomasyon1 {
         int  a =10;
 int  c =10;
 int ff =10;
+int df=34;
 
         // TODO code application logic here
         
