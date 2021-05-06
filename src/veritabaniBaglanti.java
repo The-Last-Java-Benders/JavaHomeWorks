@@ -1,6 +1,6 @@
-import com.mysql.jdbc.ConnectionGroup;
 import java.sql.Connection;
 import java.sql.DriverManager;
+
 
 
 public class veritabaniBaglanti {
@@ -9,7 +9,7 @@ public class veritabaniBaglanti {
     Connection  connection = null;
         try {
             Class.forName("com.mysq.jbdc.Driver");
-            connection=DriverManager.getConnection("jbdc:mysql://localhost/kutuphane", "root" ,"");
+            connection=DriverManager.getConnection("jbdc:mysql://localhost:3306/kutuphane", "root" ,"");
             System.out.println("baglandi");
         } catch (Exception e) {
             System.err.println(e.getMessage());
