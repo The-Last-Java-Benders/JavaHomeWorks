@@ -3,6 +3,7 @@ import com.sun.jdi.connect.spi.Connection;
 import com.mysql.jdbc.ConnectionGroup;
 import com.mysql.jdbc.PreparedStatement;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
 
  /*
@@ -708,6 +709,11 @@ public class anaSayfa extends javax.swing.JFrame {
         jTextField12.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
 
         jButton20.setText("ARA");
+        jButton20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton20ActionPerformed(evt);
+            }
+        });
 
         jLabel21.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel21.setText("ISIM:");
@@ -1219,7 +1225,9 @@ jTabbedPane1.setSelectedIndex(6);         // TODO add your handling code here:
                     JOptionPane.showMessageDialog(this,"HATA OPPSS.");
                 }
             }
-
+            else{
+                JOptionPane.showMessageDialog(this,"Lutfen tum alanlari doldurun");
+            }
         } catch (Exception e) {
             
             
@@ -1244,6 +1252,20 @@ jTabbedPane1.setSelectedIndex(6);         // TODO add your handling code here:
     private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField10ActionPerformed
+
+    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+        java.sql.Connection con =  veritabaniBaglanti.getConnection();
+        
+       java.sql.PreparedStatement ps;
+       java.sql.ResultSet rs;
+        try {
+            PreparedStatement PreparedStatement = null;
+            ps = con.prepareStatement(string)preparedStatement("SELECT * FROM 'kullanici' WHERE telNo=? OR tc=?");
+            ps.setString(1, jTextField12.getText());
+            ps.setString(2, jTextField12.getText());
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_jButton20ActionPerformed
 
     /**
      * @param args the command line arguments
