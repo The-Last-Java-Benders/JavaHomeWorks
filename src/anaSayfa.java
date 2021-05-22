@@ -1,7 +1,5 @@
 
-import com.sun.jdi.connect.spi.Connection;
-import com.mysql.jdbc.ConnectionGroup;
-import com.mysql.jdbc.PreparedStatement;
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
@@ -1260,10 +1258,13 @@ jTabbedPane1.setSelectedIndex(6);         // TODO add your handling code here:
        java.sql.ResultSet rs;
         try {
             PreparedStatement PreparedStatement = null;
-            ps = con.prepareStatement(string)preparedStatement("SELECT * FROM 'kullanici' WHERE telNo=? OR tc=?");
+            ps= con.prepareStatement("SELECT * FROM 'kullanici' WHERE telNo=? OR tc=?");
+                    
+                    
             ps.setString(1, jTextField12.getText());
             ps.setString(2, jTextField12.getText());
-        } catch (Exception e) {
+        } 
+        catch (Exception e) {
         }
     }//GEN-LAST:event_jButton20ActionPerformed
 
