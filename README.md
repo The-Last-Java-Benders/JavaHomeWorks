@@ -1,1 +1,2 @@
-JavaODev klasöründe Helloworld projesi vardır ve KütüphaneOtomasyonu klasöründe ana projemiz vardır
+Ana prjemiz master branchindedir.
+JavaODev klasöründe Helloworld projesi vardır ve KütüphaneOtomasyonu klasöründe ana projemiz vardır.
